@@ -1,4 +1,4 @@
-name: Actions Workflow 
+name: Actions Workflow Щ
 
 on: [push]
 
@@ -16,6 +16,12 @@ jobs:
           echo "${{ github.token }}"
           # git clone git@github:$GITHUB_REPOSITORY
           # git checkout $GITHUB_SHA
+      - name: Checkout 
+        uses: actions/checkout@v1
+      - name: List Files After Checkout
+        run: |
+          pwd
+          ls -a
       - name: Simple JS Action
         id: greet 
         uses: actions/hello-world-javascript-action@v1
